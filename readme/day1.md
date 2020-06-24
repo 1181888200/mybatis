@@ -23,3 +23,18 @@
     * 3.1.2 PreparedStatement是预编译的,对于批量处理可以大大提高效率
     * 3.1.3 不用拼接，易编写易读懂
     * 3.1.4 防止SQL注入，提高安全性
+* 3.2 有了PreparedStatement，我们就要对sql进行预编译和设置参数
+    * 3.2.1 设置预编译 psst = con.prepareStatement(sql); 其中sql = "insert into user (name, password, sex, phone) VALUES(?,?,?,?)";
+    * 3.2.2 设置参数：根据占位符的位置和数据类型，占位符从1开始，采用相对应的方法，比如设置字符串：psst.setString(1, "我的名字");
+* 3.3 执行sql
+    * 3.3.1 psst.executeQuery() 针对查询而言
+    * 3.3.2 psst.executeUpdate()  针对数据更新
+    * 3.3.3 psst.execute()  不知道是查询还是修改，可以使用这个语句
+* 3.4 返回结果
+    * 3.4.1 针对删除、修改、新增 返回的是影响条数 int
+    * 3.4.2 针对查询，返回的ResultSet 结果集，通过返回的sql对应的字段类型和位置分别获取对应的值：String name = resultSet.getString(2);
+
+## 4. 关闭相关资源
+* 4.1 关闭返回结果资源（如果有返回结果ResultSet）
+* 4.2 关闭操作资源 PreparedStatement
+* 4.3 关闭数据库连接资源 Connection
