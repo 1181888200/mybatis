@@ -3,7 +3,7 @@
 
 ## 1. 加载驱动
     java.sql.Driver 它在MySQL Connector / J 中实现的类的名称 是 com.mysql.jdbc.Driver，也就是驱动程序。
-    ·`Class.forName(DRIVER_CLASS_NAME)`·
+    ` Class.forName(DRIVER_CLASS_NAME) `
 ## 2. 获取数据库连接
     Connection 与数据库建立连接关系,通常为 DriverManager.getConnection（url, username, password）。
     这里可以很明显的感觉出来，每个元素所产生的作用 
