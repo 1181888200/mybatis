@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwl.mybatis.day2.mapper.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.lwl.mybatis.day2.domain.Role">
+        <id column="id" property="id"/>
+        <result column="create_user"  property="createUser"/>
+        <result column="create_time"  property="createTime"/>
+        <result column="modify_user"  property="modifyUser"/>
+        <result column="modify_time"  property="modifyTime"/>
+
+
+        <result column="name"  property="name"/>
+        <result column="remark"  property="remark"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.lwl.mybatis.day2.domain.Role">
+        insert into role (name, remark, create_time) value (#{name}, #{remark}, now())
+    </insert>
+
+    <delete id="delOne" parameterType="long">
+        delete from role where  id = #{id}
+    </delete>
+
+    <select id="findOne" parameterType="long" resultMap="BaseResultMap">
+         select * from role where  id = #{id}
+    </select>
+
+    <select id="list" resultMap="BaseResultMap">
+         select * from role
+    </select>
+
+    <update id="update" parameterType="Role">
+        update role set name = #{name} , remark = #{remark}, modify_time = now()
+            where id = #{id}
+    </update>
+
+</mapper>

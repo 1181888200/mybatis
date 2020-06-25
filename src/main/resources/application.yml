@@ -1,0 +1,18 @@
+# 配置服务器信息
+server:
+  port: 8080
+
+# 配置数据库相关信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.31.33:3306/test?useUnicode=true&characterEncoding=utf-8
+
+# 配置mybatis
+mybatis:
+  # 设置别称
+  type-aliases-package: com.lwl.mybatis.day**
+  # 配置mapper文件
+  mapper-locations: classpath:mapper/**/*.xml
