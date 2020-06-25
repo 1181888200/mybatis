@@ -16,7 +16,8 @@ public class UserJdbcTest {
 //        addUserTest();
         /**
          * ---------正在执行的sql----------
-         * com.mysql.cj.jdbc.ClientPreparedStatement: insert into user (name, password, sex, phone) VALUES('帅气的劉先生','66666666666','男','18888888888')
+         * com.mysql.cj.jdbc.ClientPreparedStatement: insert into user (name, password, sex, phone)
+         *      VALUES('帅气的劉先生','66666666666','男','18888888888')
          * 运行结果：true
          */
 
@@ -42,9 +43,12 @@ public class UserJdbcTest {
          *   ---------正在执行的sql----------
          * com.mysql.cj.jdbc.ClientPreparedStatement: select * from user
          * 运行结果如下：
-         * User{id='2'name='lwl', sex='男', password='123456', phone='18888888888'} BaseModel(id=2, createUser=null, createTime=null, modifyUser=null, modifyTime=null)
-         * User{id='3'name='lwl', sex='?', password='123456', phone='18888888888'} BaseModel(id=3, createUser=null, createTime=null, modifyUser=null, modifyTime=null)
-         * User{id='5'name='帅气的劉先生', sex='男', password='66666666666', phone='18888888888'} BaseModel(id=5, createUser=null, createTime=null, modifyUser=null, modifyTime=null)
+         * User{id='2'name='lwl', sex='男', password='123456', phone='18888888888'}
+         *      BaseModel(id=2, createUser=null, createTime=null, modifyUser=null, modifyTime=null)
+         * User{id='3'name='lwl', sex='?', password='123456', phone='18888888888'}
+         *      BaseModel(id=3, createUser=null, createTime=null, modifyUser=null, modifyTime=null)
+         * User{id='5'name='帅气的劉先生', sex='男', password='66666666666', phone='18888888888'}
+         *      BaseModel(id=5, createUser=null, createTime=null, modifyUser=null, modifyTime=null)
          */
 
 
@@ -54,7 +58,8 @@ public class UserJdbcTest {
         /**
          * 运行结果：
          * ---------正在执行的sql----------
-         * com.mysql.cj.jdbc.ClientPreparedStatement: update  user set name = '刘先生', phone = '18800001234', sex = '未知', modify_time = now() where id = 2
+         * com.mysql.cj.jdbc.ClientPreparedStatement: update  user set name = '刘先生',
+         *      phone = '18800001234', sex = '未知', modify_time = now() where id = 2
          * 运行结果：true
          */
 
