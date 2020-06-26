@@ -28,6 +28,21 @@ public class RoleTest {
             role.setName("lwl"+r).setRemark("哈哈哈哈哈 => " + r);
             roleService.insert(role);
         });
+
+        /**
+         * 运行结果：
+         * 2020-06-26 12:10:17 | DEBUG | main | com.lwl.mybatis.day2.mapper.RoleMapper.insert | ==>
+         *      Preparing: insert into role (name, remark, create_time) value (?, ?, now())
+         *
+         * 2020-06-26 12:10:17 | DEBUG | HikariPool-1 housekeeper | com.zaxxer.hikari.pool.HikariPool |
+         *  HikariPool-1 - Pool stats (total=1, active=1, idle=0, waiting=0)
+         *
+         * 2020-06-26 12:10:17 | DEBUG | main | com.lwl.mybatis.day2.mapper.RoleMapper.insert | ==>
+         *      Parameters: lwl1(String), 哈哈哈哈哈 => 1(String)
+         * 2020-06-26 12:10:17 | DEBUG | main | com.lwl.mybatis.day2.mapper.RoleMapper.insert | <==
+         *
+         *  Updates: 1
+         */
     }
 
     @Test
@@ -55,6 +70,17 @@ public class RoleTest {
         List<Role> list = roleService.list();
         System.out.println("运行结果：");
         list.forEach(System.out::println);
+        /**
+         * Role{name='lwl1', remark='哈哈哈哈哈 => 1'}
+         *      BaseModel(id=5, createUser=null, createTime=Fri Jun 26 12:10:16 CST 2020, modifyUser=null, modifyTime=null)
+         * Role{name='lwl2', remark='哈哈哈哈哈 => 2'}
+         *      BaseModel(id=6, createUser=null, createTime=Fri Jun 26 12:10:16 CST 2020, modifyUser=null, modifyTime=null)
+         * Role{name='lwl3', remark='哈哈哈哈哈 => 3'}
+         *      BaseModel(id=7, createUser=null, createTime=Fri Jun 26 12:10:16 CST 2020, modifyUser=null, modifyTime=null)
+         * Role{name='lwl4', remark='哈哈哈哈哈 => 4'}
+         *      BaseModel(id=8, createUser=null, createTime=Fri Jun 26 12:10:16 CST 2020, modifyUser=null, modifyTime=null)
+         *
+         */
     }
 
 }
